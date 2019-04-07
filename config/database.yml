@@ -4,7 +4,6 @@ default: &default
   pool: 5
   template: template0
 
-
 development:
   <<: *default
   database: bodymake_development

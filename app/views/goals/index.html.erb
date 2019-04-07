@@ -1,2 +1,6 @@
-<h1>Goals#index</h1>
-<p>Find me in app/views/goals/index.html.erb</p>
+<section class="goals">
+  <h1>目標体重一覧</h1>
+  <%- @goals.each do |goal| %>
+    <p><%= goal.date.strftime("%Y年%m月%d日") %>  <%= goal.weight %>kg</p>
+  <% end %>
+</section>

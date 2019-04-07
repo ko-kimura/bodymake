@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_04_07_085021) do
 
   create_table "goals", force: :cascade do |t|
     t.float "weight", null: false
+    t.datetime "date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
