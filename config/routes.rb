@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/progresses' => 'progresses#index'
   get '/goals' => 'goals#index'
   get '/goals/new' => 'goals#new'
+  post '/goals' => 'goals#create'
+
 
 end
