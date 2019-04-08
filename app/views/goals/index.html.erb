@@ -3,4 +3,5 @@
   <%- @goals.each do |goal| %>
     <p><%= goal.date.strftime("%Y年%m月%d日") %>  <%= goal.weight %>kg</p>
   <% end %>
+  <%= link_to '新規追加', '/goals/new' %>
 </section>
