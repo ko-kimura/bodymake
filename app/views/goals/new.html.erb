@@ -1,4 +1,15 @@
+<% if @goal.errors.any? %>
+<ul>
+  <% @goal.errors.full_messages.each do |msg| %>
+  <li style="color: red;">
+    <%= msg %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @goal do |f| %>
+
 <div>
   <p>日付</p>
   <%= f.date_field :date %>

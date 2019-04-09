@@ -3,5 +3,11 @@
   <%- @goals.each do |goal| %>
     <p><%= goal.date.strftime("%Y年%m月%d日") %>  <%= goal.weight %>kg</p>
   <% end %>
-  <%= link_to '新規追加', '/goals/new' %>
+  <%= link_to '新規追加', new_goal_path %>
+
+  <% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
 </section>
