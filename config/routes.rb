@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 #  get '/goals' => 'goals#index'
 #  get '/goals/new' => 'goals#new'
 #  post '/goals' => 'goals#create'
-resources :goals, only: [:index, :new, :create]
+resources :goals, only: [:index, :new, :create, :edit, :update]
 
 end

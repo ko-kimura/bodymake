@@ -21,6 +21,27 @@ class GoalsController < ApplicationController
     end
   end
 
+  def edit
+    @goal = Goal.find(params[:id])
+  end
+
+  def update
+    @goal = Goal.find(params[:id])
+    if @goal.update(goal_params)
+      #goalが保存できた時（成功した時）
+      redirect_to goals_path , notice: '編集完了です！'
+      #redirect_toはrouteに返す（通常の返し）
+    else
+      #goalが保存できなかった（失敗した時）
+      #dateやweightが空だった場合、エラーメッセージを持った状態でnewに戻る
+      render :new
+      #render はviewのみを返す。ここではnewのviewのみを返す
+      #redirect_toの場合は、仮に10個の項目があった場合は全て初期状態に戻ってしまう
+    end
+
+  end
+
+
   private
 
   def goal_params
